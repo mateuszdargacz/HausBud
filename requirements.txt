@@ -1,0 +1,11 @@
+Django==1.5.1
+django-appmedia==1.0.1
+django-bootstrap-form==3.0
+django-classy-tags==0.4
+django-cms==2.4.2
+django-mptt==0.5.2
+django-sekizai==0.7
+html5lib==1.0b3
+mysql-python==1.2.4
+python-memcached==1.53
+six==1.4.0

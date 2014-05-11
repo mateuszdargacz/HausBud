@@ -1,0 +1,230 @@
+{% load  cms_tags menu_tags sekizai_tags i18n thumbnail %}
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from preview.webpixels.ro/boomerang-1/ by HTTrack Website Copier/3.x [XR&CO'2010], Tue, 11 Feb 2014 16:54:10 GMT -->
+<head>
+    <meta charset="utf-8">
+    <title>HausBud Arkadiusz Chodnicki</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Required -->
+    <link href="{{ STATIC_URL }}css/global-style.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="icon" href="{{ STATIC_URL }}images/favicon.png" type="image/png">
+    <link href="{{ STATIC_URL }}assets/fraction/fractionslider.css" rel="stylesheet" type="text/css" media="screen">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/plugins/cms.toolbar.css?v1" media="all"/>
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}cms/css/plugins/cms.placeholders.css" media="all"/>
+    {% block css %}
+
+    {% endblock %}
+
+</head>
+
+<body>
+
+<!--[if lt IE 9]>
+<div class="container">
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <p>Używasz <strong>przestarzałej</strong> przeglądarki. <a href="http://browsehappy.com/">Zaktualizuj ją</a>, aby w wpełni skorzystać z możliwości tej strony.</p>
+      </div>
+    </div>
+  <![endif]-->
+{% cms_toolbar %}
+
+
+<body>
+
+<section id="asideMenu" class="aside-menu">
+    <form class="form-inline form-search">
+        <div class="col-md-10 col-md-offset-1">
+            <span class="input-group-btn pull-right">
+                <button id="btnHideAsideMenu" class="btn btn-close" type="button" title="Hide sidebar"><i
+                        class="fa fa-times"></i></button>
+            </span>
+        </div>
+    </form>
+
+    <h5 class="side-section-title">{% trans "Menu" %}</h5>
+
+    <div class="nav">
+        <ul>
+            {% show_menu 0 100 100 100 "cms/includes/menu.html" %}
+        </ul>
+    </div>
+
+    <h5 class="side-section-title">Social media</h5>
+
+    <div class="social-media">
+        <a href="#"><i class="fa fa-facebook facebook"></i></a>
+        <a href="#"><i class="fa fa-google-plus google"></i></a>
+        <a href="#"><i class="fa fa-twitter twitter"></i></a>
+    </div>
+
+    <h5 class="side-section-title">{% trans "Contact information" %}</h5>
+
+    <div class="contact-info">
+        <h5>{% trans "Address" %}</h5>
+
+        <p>{% trans "84-241 Goscicino" %} <br/>{% trans "17 Zielona St" %}<br/>{% trans "Poland" %}</p>
+        <h5>Email</h5>
+
+        <p>{% trans "biuro@hausbud.pl" %}</p>
+
+        <h5>{% trans "Phone" %}</h5>
+
+        <p>+48 508 347 861</p>
+    </div>
+</section>
+
+
+<div class="wrapper">
+    <div class="top-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+            	<span class="aux-text hidden-xs">
+                    {% trans 'Welcome to HausBud! +48 508 347 861' %}
+                </span>
+                    <nav class="top-header-menu">
+                        <ul class="menu">
+                            <li class="aux-languages dropdown"><a href="#"><span
+                                    class="language name">{% trans "Language" %}</span></a>
+                                <ul id="auxLanguages" class="sub-menu">
+                                    {% language_chooser "cms/includes/language_chooser.html" %}
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div class="navbar navbar-white" role="navigation">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle navbar-toggle-aside-menu">
+                            <i class="fa fa-outdent icon-custom"></i>
+                        </button>
+                        <button type="button" class="navbar-toggle" data-toggle="collapse"
+                                data-target=".navbar-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="/">
+                            <img src="{{ STATIC_URL }}images/boomerang-logo.png"
+                                 alt="Boomerang Bootstrap Template Logo">
+                        </a>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            {% show_menu 0 100 100 100 "cms/includes/menu.html" %}
+                            <li class="hidden-xs">
+                                <a href="#" id="cmdAsideMenu" class="dropdown-toggle dropdown-form-toggle"
+                                   title="Open sidebar">
+                                    <i class="fa fa-outdent"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--/.nav-collapse -->
+                </div>
+            </div>
+        </header>
+        <div class="pg-opt pin">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6"><br/><br/><br/>
+                    </div>
+                    <div class="col-md-6"><br/><br/><br/>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        {% block slider %}
+            <!--=== Slider ===-->
+            {% placeholder "slider" or %}
+                {% show_placeholder "slider" "about" %}
+            {% endplaceholder %}
+        {% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="col">
+                            <h4>{% trans "Contact information" %}</h4>
+                            <ul>
+                                <li>{% trans "84-241 Goscicino" %}</li>
+                                <li>{% trans "17 Zielona St" %}</li>
+                                <li>{% trans "Poland" %}</li>
+                                <li>Email: {% trans "biuro@hausbud.pl" %}</li>
+                                <li>{% trans "Phone" %}: +48 508 347 861</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="col col-social-icons">
+                            <h4>{% trans "Social media" %}</h4>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                            <a href="#"><i class="fa fa-skype"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-9 copyright">
+                        2014 © Mateusz Dargacz
+                    </div>
+                    <div class="col-lg-3 footer-logo">
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.easing.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+<![endif]-->
+
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/hover-dropdown/bootstrap-hover-dropdown.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/masonry/masonry.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/page-scroller/jquery.ui.totop.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/mixitup/jquery.mixitup.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/mixitup/jquery.mixitup.init.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/fancybox/jquery.fancybox.pack8cbb.js?v=2.1.5"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/easy-pie-chart/jquery.easypiechart.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}assets/waypoints/waypoints.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.wp.custom.js"></script>
+    <script src="{{ STATIC_URL }}assets/fraction/jquery.fractionslider.min.js"></script>
+    <script src="{{ STATIC_URL }}assets/fraction/jquery.fractionslider.init.js"></script>
+    {% render_block "js" %}
+    {% block extra-js %}{% endblock %}
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+{% load facilities_tags thumbnail i18n %}
+<div class="panel-group" id="accordion1">
+{% for service in services %}
+    <div class="single">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{ forloop.counter }}">
+                     {{ service.title }}
+                    </a><span class="glyphicon glyphicon-chevron-down"></span>
+                </h4>
+            </div>
+            <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse {% if forloop.first %}in{% endif %}">
+                <div class="panel-body">
+                    <div class="row">
+                    <div class="col-md-6">
+                    {{ service.description }}
+                    </div>
+                    <div class="col-md-6">
+                        <img src="{{ service.image.url }}" alt=""/>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endfor %}
+</div>

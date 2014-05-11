@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load thumbnail sekizai_tags gallery_tags i18n cms_tags menu_tags %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block js %}
+{% endblock %}
+
+{% block content %}
+<section class="slice bg-2">
+      <div class="w-section inverse">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center">
+                            <h2>Here is some of our work</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas neque diam, luctus at laoreet in, auctor ut tellus.
+                                <br>
+                                Etiam enim lacus, ornare et tempor, rhoncus rhoncus sem.
+                            </p>
+                            <span class="clearfix"></span>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    {% placeholder "galeria" %}
+{% endblock %}

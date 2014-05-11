@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load cms_tags  menu_tags i18n %}
+
+{% block css %}
+
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript" src="{{ STATIC_URL }}js/contact_form.js"></script>
+{% endblock %}
+
+{% block content %}
+    <section class="slice bg-2 p-15">
+        <div class="cta-wr">
+            <div class="container">
+                <div class="row">
+                <h3>{% trans "Feel free to contact us!" %} </h3>
+                <p>
+                    {% trans "Have a question? Post! and we will contact you by phone or at the following e-mail within 24 hours." %}
+                </p>
+                    <form id="contact-form" action="#">
+                    <div class="row form">
+                        <div class="col-sm-6 row-col">
+                            <div class="box">
+                                <div id="name-group" class="form-group">
+                                <input class="name form-control" type="text" name="name" placeholder="{% trans "Your Name" %}">
+                                </div>
+                                <div id="email-group" class="form-group">
+                                <input class="mail form-control" type="text" name="email" placeholder="{% trans "E-mail address" %}l">
+                                </div>
+                                <div id="phone-group" class="form-group ">
+                                <input class="phone form-control" type="text" name="phone" placeholder="{% trans "Phone number" %}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="box">
+                                <div id="message-group" class="form-group">
+                                <textarea name="message"  rows="6" placeholder="{% trans "Write a message" %}" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row submit">
+                        <div id="submit-contact" class="col-md-2 pull-right">
+                            <br/>
+                            <input  class="btn btn-one btn-lg"type="submit" value="{% trans "Send" %}">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+                     {% placeholder "Mapa" %}
+
+{% endblock %}

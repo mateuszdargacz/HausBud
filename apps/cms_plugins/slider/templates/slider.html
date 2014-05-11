@@ -1,0 +1,55 @@
+{% load slider_tags %}
+
+<section class="slider-wrapper">
+        <div class="responisve-container">
+            <div class="slider">
+                <div class="fs_loader"></div>
+                 {% for slide in slides %}
+                <div class="slide {% if forloop.first %}slide-light{% endif %}">
+                    <img src="{{ slide.background.url }}" alt="" height="440" data-position="0,-460" data-in="bottom" data-delay="200" data-out="top">
+                    {% if slide.image %}
+                        <img src="{{ slide.image.url }}" alt="" data-position="{{ image_position_vertical }}, {{ image_position_horizontal }}" data-in="bottom" data-delay="400" data-out="bottom">
+                    {% endif %}
+                {% if slide.description_red %}
+
+                    <p class="claim bg-2" data-position="70,0" data-in="top" data-step="1" data-out="bottom" data-time="1000" data-delay="50">
+                        {{ slide.description_red }}
+                    </p>
+                {% endif %}
+                {% if slide.description_black %}
+                    <p class="claim dark" data-position="120,0" data-in="top" data-step="1" data-out="bottom" data-time="3500" data-delay="150">
+                        {{ slide.description_black }}
+                    </p>
+                {% endif %}
+                {% if slide.description_little %}
+                    <p class="teaser dark small" data-position="180,0" data-in="left" data-step="2" data-time="1500" data-delay="75">
+                        {{ slide.description_little }}
+                    </p>
+                {% endif %}
+                {% if slide.link %}
+                    <a href="{{ slide.link }}" data-position="240,0" data-step="2" data-time="1500" data-delay="75">
+                        <span class="btn btn-two" >{{ slide.link_name }}</span>
+                    </a>
+                {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

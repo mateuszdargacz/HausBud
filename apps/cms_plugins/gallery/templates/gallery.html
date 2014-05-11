@@ -1,0 +1,41 @@
+{% load thumbnail sekizai_tags gallery_tags i18n %}
+<section class="slice bg-3 animate-hover-slide">
+        <div class="w-section inverse work">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sort-list-btn">
+                            <button type="button" class="btn btn-two filter active" data-filter="all"><i class="fa fa-th-large"></i> Show all</button>
+                            {% get_categories as categories %}
+                            {% for category in categories %}
+                            <button type="button" class="btn btn-five filter" data-filter="category_{{ category.0 }}">{{ category.1 }}</button>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="ulSorList">
+                        {% for image in images %}
+                        <div class="mix category_{{ image.size }} col-lg-3 col-md-3 col-sm-6 mix_all" data-cat="1" style="display: inline-block; opacity: 1;">
+                            <div class="w-box inverse">
+                                <div class="figure">
+                                    <img alt="" src="{% if image.image.width > 500 %}{% thumbnail image.image 350x197  %}{% else %}{% thumbnail image.image 355x197  %}{% endif %}" class="img-responsive">
+                                    <div class="figcaption bg-2"></div>
+                                    <div class="figcaption-btn">
+
+                                        <a class="btn btn-xs btn-one theater" data-rel="fancybox-button" title="{{ image.title }}" href="{{ image.image.url }}"> <i class="fa fa-plus-circle"></i> Zoom</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="gap"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+-

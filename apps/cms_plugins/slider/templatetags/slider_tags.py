@@ -26,5 +26,7 @@ def shitty_parse_hack(string, phrase1, pharse2):
     for phrase in phrases:
         st = string.split(phrase)
         st[0] += "<br>"+phrase
+        if phrase == phrases[1]:
+            st[0] += '<br>'
         string = ''.join(st)
     return string

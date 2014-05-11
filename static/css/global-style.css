@@ -8021,14 +8021,7 @@ div.tabbable.tabs-right ul.nav-tabs li.active a {
     padding: 14px 15px;
     position: relative;
 }
-.panel-group .panel-heading:after {
-    content: "+";
-    font-size: 12px;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    margin-top: -8px;
-}
+
 .panel-group .panel-heading a {
     font-weight: normal;
 }

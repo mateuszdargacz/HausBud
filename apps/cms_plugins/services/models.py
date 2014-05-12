@@ -5,7 +5,7 @@ from django.db import models
 from django.utils.translation import ugettext as _
 
 from cms.models import CMSPlugin
-
+from tinymce.models import HTMLField
 
 
 class Services(Sortable):
@@ -26,7 +26,7 @@ class Service(Sortable):
     attractions = models.ForeignKey(Services, verbose_name=_("Serives Set"), related_name="services")
     title = models.CharField(_("Title"), max_length=35)
     image = models.ImageField(_(u"Image"), upload_to="media/gallery/images/")
-    description = models.TextField(_("Description"), max_length=1024)
+    description = HTMLField(_("Description"), max_length=1024)
     class Meta(Sortable.Meta):
         verbose_name = _("service")
         verbose_name_plural = _("services")

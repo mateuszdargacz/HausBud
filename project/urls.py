@@ -9,7 +9,8 @@ from django.views.generic import TemplateView
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^ajax/',include('cms_plugins.contact_form.urls', namespace='ajax')),
+    url(r'^ajax/',include('apps.cms_plugins.contact_form.urls', namespace='ajax')),
+    url(r'^tinymce/', include('tinymce.urls')),
     url(r'^jsi18n/(?P<packages>\S+?)/$', 'django.views.i18n.javascript_catalog'),
     url(r'^admin/', include(admin.site.urls)),
 

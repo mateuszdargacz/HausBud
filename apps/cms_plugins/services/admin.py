@@ -6,10 +6,13 @@ from .models import Services, Service
 
 
 class ServicesInline(SortableStackedInline):
-    model = Service
     extra = 1
+    model = Service
 
-
+class Media:
+        js = (
+            '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js', # jquery
+        )
 class ServicesAdmin(SortableAdmin):
     inlines = [ServicesInline, ]
 

@@ -135,6 +135,7 @@ INSTALLED_APPS = (
     'mptt',
     'sekizai',
     'cms',
+    'tinymce',
     'cms.plugins.text',
     'cms.plugins.picture',
     'cms.plugins.link',
@@ -148,11 +149,11 @@ INSTALLED_APPS = (
     'bootstrapform',
     'modeltranslation',
     #my apps
-    'cms_plugins.slider',
-    'cms_plugins.gallery',
-    'cms_plugins.services',
-    'cms_plugins.facilities',
-    'cms_plugins.contact_form',
+    'apps.cms_plugins.slider',
+    'apps.cms_plugins.gallery',
+    'apps.cms_plugins.services',
+    'apps.cms_plugins.facilities',
+    'apps.cms_plugins.contact_form',
 
 )
 
@@ -222,7 +223,9 @@ EMAIL_HOST_USER = 'mateuszdargacz'
 EMAIL_HOST_PASSWORD = ''
 
 THUMBNAIL_DEBUG = True
-
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',
+}
 try:
     execfile('%s/project/local_settings.py' % PROJECT_PATH)
 except IOError:

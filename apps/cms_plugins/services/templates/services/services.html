@@ -14,11 +14,11 @@
             <div id="collapse{{ forloop.counter }}" class="panel-collapse collapse {% if forloop.first %}in{% endif %}">
                 <div class="panel-body">
                     <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-7">
                     {{ service.description|safe }}
                     </div>
-                    <div class="col-md-6">
-                        <img src="{{ service.image.url }}" alt=""/>
+                    <div class="col-md-5">
+                        <img src="{% thumbnail service.image 300x0 %}" alt=""/>
                     </div>
                     </div>
                 </div>

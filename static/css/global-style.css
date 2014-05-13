@@ -8268,11 +8268,13 @@ div.tabbable.tabs-right ul.nav-tabs li.active a {
     height: 100%;
     vertical-align: middle;
     text-align: center;
+    float: right;
+    margin-right: 10%;
 }
 .service-img{
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    border-radius: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
     -webkit-box-shadow: 7px 7px 5px 0px rgba(50, 50, 50, 0.75);
     -moz-box-shadow:    7px 7px 5px 0px rgba(50, 50, 50, 0.75);
     box-shadow:         7px 7px 5px 0px rgba(50, 50, 50, 0.75);

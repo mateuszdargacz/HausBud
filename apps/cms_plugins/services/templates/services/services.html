@@ -15,10 +15,14 @@
                 <div class="panel-body">
                     <div class="row">
                     <div class="col-md-7">
-                    {{ service.description|safe }}
+                        <div class="service-description">
+                            {{ service.description|safe }}
+                        </div>
                     </div>
                     <div class="col-md-5">
-                        <img src="{% thumbnail service.image 300x0 %}" alt=""/>
+                        <span class="center-img">
+                        <img class="service-img" src="{% thumbnail service.image 400x0 crop %}" alt=""/>
+                        </span>
                     </div>
                     </div>
                 </div>

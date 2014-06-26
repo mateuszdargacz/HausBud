@@ -8,8 +8,8 @@ from cms.models import CMSPlugin
 
 CATEGORY_CHOICES = [
     ('1', _("Izolacje")),
-    ('2', _("Kategoria 1")),
-    ('3', _("kategoria 2")),
+    ('2', _("Płyty kartonowo - gipsowe")),
+    ('3', _("Tynkowanie maszynowe")),
 ]
 
 

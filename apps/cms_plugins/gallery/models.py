@@ -7,11 +7,10 @@ from django.utils.translation import ugettext as _
 from cms.models import CMSPlugin
 
 CATEGORY_CHOICES = [
-    ('1', _("Izolacje")),
-    ('2', _("Płyty kartonowo - gipsowe")),
-    ('3', _("Tynkowanie maszynowe")),
+    ('1', _(u"Izolacje")),
+    ('2', _(u"Płyty kartonowo - gipsowe")),
+    ('3', _(u"Tynkowanie maszynowe")),
 ]
-
 
 
 class Gallery(Sortable):
@@ -27,6 +26,7 @@ class Gallery(Sortable):
         verbose_name = _("Gallery")
         verbose_name_plural = _("Galleries")
 
+
 class Image(Sortable):
     gallery = models.ForeignKey(Gallery, verbose_name=_("Gallery"))
     title = models.CharField(_("Title"), max_length=35)
@@ -39,8 +39,6 @@ class Image(Sortable):
 
     def __unicode__(self):
         return self.title
-
-
 
 
 class GalleryPlugin(CMSPlugin):
